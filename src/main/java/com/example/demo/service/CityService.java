@@ -16,8 +16,12 @@ public class CityService implements ICityService {
 
 	@Override
 	public List<City> findAll() {
-		var cities = (List<City>) repository.findAll();
-		return cities;
+		return repository.findAll();
+	}
+
+	@Override
+	public List<City> findByName(String name) {
+		return repository.findByName(name);
 	}
 
 	@Override
@@ -27,8 +31,12 @@ public class CityService implements ICityService {
 
 	@Override
 	public City getCityById(Long id) {
-		// TODO Auto-generated method stub
 		return repository.findById(id).get();
+	}
+
+	@Override
+	public void deleteCityById(Long id) {
+		repository.deleteById(id);
 	}
 
 }
