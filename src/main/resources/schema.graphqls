@@ -1,17 +1,18 @@
-schema {
-  query: Query
-}
-
-type Query {
-     city(id : ID) : City
-}
-
 type City {
      id : ID !
      name : String
      population : Int
 }
 
-type Mutation {
-    saveCity(name: String, population: Int) : City
+type Query {
+     city(id : ID) : City
+     findAll : [City]
+     findByName(name : String) : [City]
 }
+
+type Mutation {
+    addCity(name: String, population: Int) : City
+    deleteCity(id : ID) : String
+}
+
+    
