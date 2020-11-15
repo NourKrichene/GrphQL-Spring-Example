@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.web.resolver;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.example.demo.model.City;
+import com.example.demo.service.ICityService;
 
 @Component
 public class CityResolver implements GraphQLQueryResolver {
@@ -18,11 +19,11 @@ public class CityResolver implements GraphQLQueryResolver {
 		return cityService.getCityById(id);
 	}
 
-	public List<City> findAll() {
+	public List<City> allCities() {
 		return cityService.findAll();
 	}
 
-	public List<City> findByName(String name) {
+	public List<City> citiesByName(String name) {
 		return cityService.findByName(name);
 	}
 

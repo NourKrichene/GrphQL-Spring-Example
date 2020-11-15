@@ -12,31 +12,31 @@ import com.example.demo.repository.CityRepository;
 public class CityService implements ICityService {
 
 	@Autowired
-	private CityRepository repository;
+	private CityRepository cityRepository;
 
 	@Override
 	public List<City> findAll() {
-		return repository.findAll();
+		return cityRepository.findAll();
 	}
 
 	@Override
 	public List<City> findByName(String name) {
-		return repository.findByName(name);
+		return cityRepository.findByName(name);
 	}
 
 	@Override
 	public void saveCity(City city) {
-		repository.save(city);
+		cityRepository.save(city);
 	}
 
 	@Override
 	public City getCityById(Long id) {
-		return repository.findById(id).get();
+		return cityRepository.findById(id).get();
 	}
 
 	@Override
 	public void deleteCityById(Long id) {
-		repository.deleteById(id);
+		cityRepository.deleteById(id);
 	}
 
 }
