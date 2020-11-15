@@ -1,10 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.web.mutation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.demo.model.City;
+import com.example.demo.service.ICityService;
 
 @Component
 public class CityMutation implements GraphQLMutationResolver {
@@ -21,6 +22,6 @@ public class CityMutation implements GraphQLMutationResolver {
 
 	public String deleteCity(Long id) {
 		cityService.deleteCityById(id);
-		return "Deleted";
+		return "City deleted";
 	}
 }

@@ -4,15 +4,28 @@ type City {
      population : Int
 }
 
+type Country {
+     id : ID !
+     name : String
+     language : String
+}
+
 type Query {
      city(id : ID) : City
-     findAll : [City]
-     findByName(name : String) : [City]
+     allCities : [City]
+     citiesByName(name : String) : [City]
+     
+     country(id : ID) : Country
+     allCountries : [Country]
+     countriesByName(name : String) : [Country]
 }
 
 type Mutation {
     addCity(name: String, population: Int) : City
     deleteCity(id : ID) : String
+    
+    addCountry(name: String, language: String) : Country
+    deleteCountry(id : ID) : String
 }
 
     
