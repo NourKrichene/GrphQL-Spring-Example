@@ -16,8 +16,7 @@ public class CityMutation implements GraphQLMutationResolver {
 		var city = new City();
 		city.setName(name);
 		city.setPopulation(population);
-		cityService.saveCity(city);
-		return city;
+		return cityService.saveCity(city);
 	}
 
 	public String deleteCity(Long id) {

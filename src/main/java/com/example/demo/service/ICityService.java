@@ -6,7 +6,7 @@ import com.example.demo.model.City;
 
 public interface ICityService {
 
-	void saveCity(City city);
+	City saveCity(City city);
 
 	City getCityById(Long id);
 

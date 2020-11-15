@@ -6,7 +6,7 @@ import com.example.demo.model.Country;
 
 public interface ICountryService {
 
-	void saveCountry(Country country);
+	Country saveCountry(Country country);
 
 	Country getCountryById(Long id);
 

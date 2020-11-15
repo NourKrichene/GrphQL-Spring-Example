@@ -25,13 +25,13 @@ public class CityService implements ICityService {
 	}
 
 	@Override
-	public void saveCity(City city) {
-		cityRepository.save(city);
+	public City saveCity(City city) {
+		return cityRepository.save(city);
 	}
 
 	@Override
 	public City getCityById(Long id) {
-		return cityRepository.findById(id).get();
+		return cityRepository.findById(id).orElse(null);
 	}
 
 	@Override
